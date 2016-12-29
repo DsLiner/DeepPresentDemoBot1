@@ -33,7 +33,7 @@ public class BasicLuisDialog : LuisDialog<object>
     [LuisIntent("GetDefinition")]
     public async Task GetDefinitionIntent(IDialogContext context, LuisResult result)
     {
-        await context.PostAsync($"You have reached the GetDefinition intent. You said: {result.Query}"); //
+        await context.PostAsync($"{result.Query}"); //
         context.Wait(MessageReceived);
     }
 }
