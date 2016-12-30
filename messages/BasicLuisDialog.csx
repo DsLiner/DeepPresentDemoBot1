@@ -30,12 +30,12 @@ public class BasicLuisDialog : LuisDialog<object>
         context.Wait(MessageReceived);
     }
     
-    // [LuisIntent("GetDefinition")]
-    // public async Task GetDefinitionIntent(IDialogContext context, LuisResult result)
-    // {
-    //     await context.PostAsync($"{result.Query}"); //
-    //     context.Wait(MessageReceived);
-    // }
+    [LuisIntent("GetDefinition")]
+    public async Task GetDefinitionIntent(IDialogContext context, LuisResult result)
+    {
+        await context.PostAsync($"{result.Query}"); //
+        context.Wait(MessageReceived);
+    }
 
     [LuisIntent("GetHelp")]
     public async Task GetHelpIntent(IDialogContext context, LuisResult result)
